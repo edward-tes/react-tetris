@@ -8,8 +8,20 @@
   "scripts": {
     "cls": "rm -rf dist",
     "dev": "webpack-dev-server --open",
+    "precommit": "lint-staged",
     "build": "webpack",
     "start": "yarn run dev"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "prettier --trailing-comma all --no-semi --write",
+      "eslint_d --fix",
+      "git add"
+    ],
+    "src/**/*.@(less|css)": [
+      "prettier --trailing-comma all --no-semi --write",
+      "git add"
+    ]
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
@@ -32,11 +44,13 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "css-loader": "^0.28.4",
+    "eslint": "^4.7.2",
     "extract-text-webpack-plugin": "^3.0.0",
     "html-webpack-plugin": "^2.29.0",
     "less": "^2.7.2",
     "less-loader": "^4.0.5",
     "postcss-loader": "^2.0.6",
+    "prettier": "^1.7.0",
     "react-hot-loader": "next",
     "style-loader": "^0.18.2",
     "webpack": "^3.6.0",
