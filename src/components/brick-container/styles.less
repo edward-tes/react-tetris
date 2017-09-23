@@ -1,0 +1,17 @@
+@import "~styles/vars";
+@prefix: tetris-brick-container;
+
+@brick-real-size: (@brick-size + 2px * 2 + 2px * 2 );
+
+.@{prefix} {
+  position: relative;
+  height: @brick-column-num * @brick-real-size;
+  width: @brick-row-num * @brick-real-size;
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid black;
+  background: linear-gradient(135deg, white 50%, #bbb 0);
+  background-size: @brick-real-size @brick-real-size;
+  will-change: transform;
+  align-content: flex-start;
+}

@@ -1,0 +1,23 @@
+@import "~styles/vars";
+@prefix: tetris-brick;
+
+@brick-real-size: (@brick-size + 2px * 2 + 2px * 2 );
+
+.@{prefix} {
+  position: absolute;
+  height: @brick-real-size;
+  width: @brick-real-size;
+  display: inline-block;
+  background-size: @brick-size @brick-size;
+  background: linear-gradient(135deg, white 50%, #bbb 0);
+  background-repeat: no-repeat;
+}
+
+.@{prefix}-active {
+  margin: 2px;
+  height: @brick-size;
+  width: @brick-size;
+  border: 2px solid white;
+  outline: black solid 2px;
+  background: black;
+}
